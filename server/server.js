@@ -21,6 +21,12 @@ connectDb()
 
 const port = process.env.PORT
 
+
+
+app.get('/',(req,res)=>{
+res.send("welcome to the backend")
+})
+
 app.listen(port, () => {
     console.log('server has been started on port:', port)
 })
