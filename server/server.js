@@ -3,6 +3,8 @@ import mongoose from './database/mongodb.js'
 import router from './routes/router.js'
 import connectDb from './database/mongodb.js'
 import cors from 'cors'
+import dotenv from 'dotenv'
+dotenv.config()
 
 const app = express()
 
@@ -17,7 +19,7 @@ app.use(router)
 
 connectDb()
 
-const port = 3000
+const port = process.env.PORT
 
 app.listen(port, () => {
     console.log('server has been started on port:', port)
